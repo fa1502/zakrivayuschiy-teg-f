@@ -79,9 +79,10 @@
 .card__img {
  max-width: 100%;
  height: 100%;
- object-fit: cover;
+ object-fit: contain;
  display: block;
  overflow: hidden;
+
 }
 
 .card__img-lable {
@@ -316,7 +317,7 @@ dialog::backdrop {
   filter: invert(0.7);
 }
 .filter_blur {  /*-*/
-  filter: blur(7px);
+  filter: blur(3px);
 }
 .filter_grayscale {  /*-*/
   filter: grayscale(80%);
@@ -329,7 +330,7 @@ dialog::backdrop {
   filter: saturate(390%);
 }
 .filter_mix {
-  filter: blur(7px) hue-rotate(0.25turn);
+  filter: blur(3px) hue-rotate(0.25turn);
 }
 
 /*-------------------------*/
@@ -338,14 +339,17 @@ dialog::backdrop {
   opacity: 0;
 }
 
-.like-icon:hover .core {
-  fill: var(--heart-counter-color);
-  transition: fill 0.3s linear 0s;
+.main-body {
+  transition: fill 1s linear 0.3s;
 }
 
 .like-icon:hover .main-body {
   fill: var(--heart-counter-color);
-  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:hover .core {
+  fill: var(--heart-counter-color);
+  transition: fill 0.3s linear 0s;
 }
 
 
