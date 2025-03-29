@@ -1,0 +1,185 @@
+/* Здесь вы напишете основную часть стилей страницы.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+*/
+
+.page {
+  background-image: url(../images/background.png);
+  background-repeat: repeat-x;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-family: var(--main-font), 'Open Sans';
+  font-variation-settings: "wght" var(--weight-font-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100%-50px);
+}
+
+.header{
+  margin-block: 100px;
+  border: 2px black solid;
+  background-color: white;
+  padding: clamp(7.5rem, 6.9231rem + 2.4615vw, 8rem) 0;
+  text-align: center;
+  inline-size: clamp(375px, 100%, 700px);
+}
+
+.mainTitle{
+  font-family: var(--accent-font), serif;
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  font-weight: var(--weight-font-text);
+  text-transform: uppercase;
+  margin-block-end: 20px;
+}
+
+.discriptionTitle {
+  font-family: var(--accent-font), serif;
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+/*-------------------------*/
+
+.main {
+  inline-size: clamp(376px, 100%, 700px);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  border: 2px black solid;
+  font-family: var(--main-font), 'Open Sans';
+  font-size: 18px;
+  line-height: 100%;
+  font-variation-settings: "wght" var(--weight-font-heading);
+  padding: 6px 10px;
+
+}
+
+.card__img-wrapper {
+  position: relative;
+}
+
+.card__img{
+ max-width: 100%;
+ height: 100%;
+ object-fit: cover;	
+}
+
+.card__img-lable {
+  font-family: var(--accent-font), serif;
+  font-size: 14px;
+  line-height: 100%;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  mix-blend-mode: hard-light;
+  text-transform: uppercase;
+  text-shadow: -0.5px 0 var(--stroke-color), 0 0.5px var(--stroke-color), 0.5px 0 var(--stroke-color), 0 -0.5px var(--stroke-color);
+}
+
+@supports (text-stroke:1px var(--stroke-color)) {
+  .card__img-lable {
+    text-stroke: 1px var(--stroke-color);
+  }
+} 
+
+.card__text {
+  padding: 25px 25px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  border: 2px black solid;
+}
+
+.card__paragraph {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.buttons {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card__icon-button {
+  inline-size: 39px;
+  block-size: 36px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 0;
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+  border: 1px solid #000;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 12.5px 37px;
+}
+
+.like-icon {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+}
+
+.button__text {
+  font-family: var(--accent-font), serif;
+  font-size: 14px;
+  line-height: 90%;
+}
+
+
+
+
+
+
+
+
+/*-------------------------*/
+.footer {
+  margin-block-start: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.footer__save-button {
+  inline-size: 335px;
+  block-size: 51px;
+  border: 1px solid #000;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5px;
+}
+
+
+.floppy-icon {
+  inline-size: 21px;
+  block-size: 21px;
+  object-fit: contain;
+}
