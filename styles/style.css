@@ -260,7 +260,7 @@ outline: none;
     padding: 15px;
   }
   
-  .svg_wrapper{
+  .svg_wrapper {
     inline-size: 28px;
     block-size: 28px;
   }
@@ -385,10 +385,10 @@ dialog::backdrop {
 }
 
 @keyframes scale_heart {
-  from{
+  from {
     transform: translate(0, 0) scale(1);
   }
-  to{
+  to {
     transform: translate(-5px, -5px) scale(1.25);
   }
 }
