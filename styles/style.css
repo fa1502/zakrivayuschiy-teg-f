@@ -14,13 +14,13 @@
   background-image: var(--background-img);
   background-attachment:fixed;
   background-size: cover;
-  min-inline-size: 320px;
+  min-inline-size: 375px;
   min-block-size: 100dvb;
-  font-family: var(--main-font), 'Open Sans';
+  font-family: var(--main-font), 'sans-serif';
+  font-variation-settings: "wght" var(--weight-font-text);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(100% - 50px);
 }
 
 .header {
@@ -32,16 +32,16 @@
   inline-size: clamp(375px, 100%, 700px);
 }
 
-.mainTitle {
-  font-family: var(--accent-font), serif;
+.main_title {
+  font-family: var(--accent-font), fantasy;
   font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
   font-weight: var(--weight-font-text);
   text-transform: uppercase;
   margin-block-end: 20px;
 }
 
-.discriptionTitle {
-  font-family: var(--accent-font), serif;
+.discription_title {
+  font-family: var(--accent-font), fantasy;
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
   text-transform: uppercase;
 }
@@ -63,11 +63,11 @@
 
 .card__title {
   border: 2px black solid;
-  font-family: var(--main-font), 'Open Sans';
+  font-family: var(--main-font), 'sans-serif';
   font-size: 18px;
   line-height: 100%;
   font-variation-settings: "wght" var(--weight-font-heading);
-  padding: 5px 10px 4px;
+  padding: 4px 10px;
   letter-spacing: 0%;
 }
 
@@ -85,7 +85,8 @@
 }
 
 .card__img-lable {
-  font-family: var(--accent-font), serif;
+  color: rgb(0 0 0 / 0.8);
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 100%;
   position: absolute;
@@ -98,6 +99,7 @@
 
 @supports (text-stroke:1px var(--stroke-color)) {
   .card__img-lable {
+    text-shadow: none;
     text-stroke: 1px var(--stroke-color);
   }
 } 
@@ -120,12 +122,11 @@
 }
 
 .buttons {
-
   align-self: flex-end;
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 }
 
 .card__icon-button {
@@ -146,24 +147,21 @@ outline: none;
   border: 2px black solid;
 }
 
-.card__like-button {
+.button {
   position: relative;
-  inline-size: 130px;
-  block-size: 40px;
   border: 2px solid #000;
   background-color: #fff;
   cursor: pointer;
-  padding: 12.5px 0;
   outline: none;
   overflow: hidden;
-}
-
-.card__like-button:focus {
-  box-shadow: 2px 2px 0 0 black;
   transition: box-shadow 0.5s;
 }
 
-.card__like-button::before {
+.button:focus {
+  box-shadow: 2px 2px 0 0 black;
+}
+
+.button::before {
   content: " ";
   position: absolute;
   left: 0;
@@ -175,8 +173,14 @@ outline: none;
   transition: transform 0.5s ease-in-out;
 }
 
-.card__like-button:hover::before {
+.button:hover::before {
   transform: translateX(0);
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 40px;
+  padding: 12.5px 0;
 }
 
 .like-icon {
@@ -187,7 +191,7 @@ outline: none;
 
 .button__text {
   color: var(--buttom-text-color);
-  font-family: var(--accent-font), serif;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 90%;
   mix-blend-mode: difference;
@@ -195,50 +199,20 @@ outline: none;
 
 /*-------------------------*/
 .footer {
-  margin-block-start: 50px;
+  margin: 0  auto 103px;
   display: flex;
   align-items: center;
-  margin-block-end: 103px;
+  inline-size: 335px;
 }
 
 .footer__save-button {
   inline-size: 100%;
   min-block-size: 55px;
-  border: 2px solid #000;
-  background-color: #fff;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3.5px;
-  padding: 0 21px;
-  outline: none;
-  overflow: hidden;
-  position: relative;
 }
-
-
-.footer__save-button:focus {
-  box-shadow: 2px 2px 0 0 black;
-  transition: box-shadow 0.5s;
-}
-
-.footer__save-button::before {
-  content: " ";
-  position: absolute;
-  left: 0;
-  top:0;
-  block-size: 100%;
-  inline-size: 100%;
-  background-color: #000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.footer__save-button:hover::before {
-  transform: translateX(0);
-}
-
 
 .svg_wrapper {
   inline-size: 21px;
@@ -254,9 +228,13 @@ outline: none;
 }
 
 @media (max-width: 376px) {
-  .footer__save-button {
+  .footer {
     inline-size: 306px;
+  }
+  .footer__save-button {
+    inline-size:  100%;
     flex-direction: column;
+    gap: 8px;
     padding: 15px;
   }
   
@@ -269,14 +247,13 @@ outline: none;
 /*-------------------------*/
 
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.8);
+  background-color: rgb(0 0 0 / 0.75);
 } 
 
 .dialog_window {
-  min-block-size: 191px;
   inline-size: 353px;
   padding: 30px;
-  font-family: var(--accent-font), serif;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
@@ -298,13 +275,11 @@ dialog::backdrop {
   margin-top: 30px;
   inline-size: 100%;
   min-block-size: 38px;
-  border: 2px solid #000;
-  background-color: #fff;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  font-family: var(--accent-font), fantasy;
 }
 
 /*-------------------------*/
@@ -338,28 +313,32 @@ dialog::backdrop {
   opacity: 0;
 }
 
-.main-body {
-  transition: fill 1s linear 0.3s;
+.core {
+  transition: fill 0.3s linear;
 }
 
-.like-icon:hover .main-body {
-  fill: var(--heart-counter-color);
+.main-body {
+  transition: fill 0.27s linear 0.3s;
 }
 
 .like-icon:hover .core {
   fill: var(--heart-counter-color);
-  transition: fill 0.3s linear 0s;
+  transition: fill 0.3s linear;
 }
 
+.like-icon:hover .main-body {
+  fill: var(--heart-counter-color);
+  transition: fill 0.25s linear 0.05s;
+}
 
 .like-icon:active .core {
   fill: var(--heart-main-color);
-  transition: fill 0.3s linear 0s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:active .main-body {
   fill: var(--heart-main-color);
-  transition: fill 0.3s linear 0.05s;
+  transition: fill 0.25s linear 0.05s;
 }
 
 /*-------------------------*/
@@ -385,22 +364,4 @@ dialog::backdrop {
 
 .like-icon.is-liked .sparks {
   animation: show_sparks 0.3s ease-in 0.3s 1;
-}
-
-@keyframes scale_heart {
-  from {
-    transform: translate(0, 0) scale(1);
-  }
-  to {
-    transform: translate(-5px, -5px) scale(1.25);
-  }
-}
-
-@keyframes show_sparks {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
