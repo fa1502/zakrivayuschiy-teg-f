@@ -85,7 +85,7 @@
 }
 
 .card__img-lable {
-  color: rgb(0 0 0 / 0.8);
+  color: rgb(0 0 0 / 0.6);
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 100%;
@@ -103,6 +103,13 @@
     text-stroke: 1px var(--stroke-color);
   }
 } 
+
+@media (max-width: 376px) {
+  .card__img-lable {
+    right: 13px;
+  }
+}
+
 
 .card__text {
   padding: 25px 26px 0;
@@ -318,7 +325,7 @@ dialog::backdrop {
 }
 
 .main-body {
-  transition: fill 0.27s linear 0.3s;
+  transition: fill 0.3s linear 0.3s;
 }
 
 .like-icon:hover .core {
@@ -328,7 +335,7 @@ dialog::backdrop {
 
 .like-icon:hover .main-body {
   fill: var(--heart-counter-color);
-  transition: fill 0.25s linear 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .core {
@@ -338,7 +345,7 @@ dialog::backdrop {
 
 .like-icon:active .main-body {
   fill: var(--heart-main-color);
-  transition: fill 0.25s linear 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 /*-------------------------*/
@@ -350,12 +357,12 @@ dialog::backdrop {
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-main-color);
-  transition: fill 0.25s linear 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--heart-main-color);
-  animation: fill 0.25s linear 0.05s;
+  animation: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .heart {
