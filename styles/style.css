@@ -362,7 +362,7 @@ dialog::backdrop {
 
 .like-icon.is-liked .contour {
   fill: var(--heart-main-color);
-  animation: fill 0.3s linear 0.05s;
+  animation: fill 0.3s linear 0.06s;
 }
 
 .like-icon.is-liked .heart {
